@@ -14,14 +14,14 @@ public class aulaDate {
 	SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
 	SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	SimpleDateFormat sdf3 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-	sdf2.setTimeZone(TimeZone.getTimeZone("GMT"));
+	sdf2.setTimeZone(TimeZone.getTimeZone("GMT-3")); // CONVERTE DO UTC PARA O PADRÃO BRASIL GMT -3
 	
 	Date x1 = new Date(); // vai criar uma variavel data com a data e horário atual
 	Date x2 = new Date(System.currentTimeMillis());
 	
 	Date y1 = sdf1.parse("25/06/2018");
 	Date y2 = sdf2.parse("25/06/2018 15:15:15");
-	Date y3 = Date.from(Instant.parse("2018-06-25T15:42:07Z"));
+	Date y3 = Date.from(Instant.parse("2018-06-25T15:42:07Z")); //ESTA DATA ESTÁ EM PADRÃO UTC
 	
 	System.out.println(y1);
 	System.out.println(y2);
